@@ -68,7 +68,7 @@ object Form1: TForm1
   end
   object btn1: TButton
     Left = 104
-    Top = 168
+    Top = 184
     Width = 81
     Height = 33
     Caption = 'LOGIN'
@@ -83,7 +83,7 @@ object Form1: TForm1
   end
   object btn2: TButton
     Left = 192
-    Top = 168
+    Top = 184
     Width = 81
     Height = 33
     Caption = 'DAFTAR'
@@ -97,10 +97,10 @@ object Form1: TForm1
   end
   object btn3: TButton
     Left = 280
-    Top = 168
+    Top = 184
     Width = 81
     Height = 33
-    Caption = 'BATAL'
+    Caption = 'KELUAR'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -108,12 +108,27 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
+    OnClick = btn3Click
+  end
+  object chk1: TCheckBox
+    Left = 208
+    Top = 160
+    Width = 121
+    Height = 17
+    Caption = 'Hide Password'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+    OnClick = chk1Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
-    Connected = True
     HostName = 'localhost'
     Port = 3306
     Database = 'data_penjualan'
@@ -123,15 +138,14 @@ object Form1: TForm1
       'C:\Program Files (x86)\Borland\Delphi7\Projects\TA Visual3\libmy' +
       'sql.dll'
     Left = 112
-    Top = 216
+    Top = 232
   end
   object zqry1: TZQuery
     Connection = con1
-    Active = True
     SQL.Strings = (
       'select*from login')
     Params = <>
     Left = 152
-    Top = 216
+    Top = 232
   end
 end

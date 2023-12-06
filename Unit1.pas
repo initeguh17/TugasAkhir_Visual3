@@ -19,7 +19,10 @@ type
     btn3: TButton;
     con1: TZConnection;
     zqry1: TZQuery;
+    chk1: TCheckBox;
     procedure btn1Click(Sender: TObject);
+    procedure btn3Click(Sender: TObject);
+    procedure chk1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +59,18 @@ end;
   Form2.Show;
   end;
 end;
+end;
+
+procedure TForm1.btn3Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+procedure TForm1.chk1Click(Sender: TObject);
+begin
+if chk1.Checked then
+edt2.PasswordChar := '*' else
+edt2.PasswordChar := #0;
 end;
 
 end.
