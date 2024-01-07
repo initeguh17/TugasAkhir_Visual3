@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 512
-  Top = 173
+  Left = 598
+  Top = 169
   Width = 473
   Height = 540
   Caption = 'LOGIN'
@@ -94,6 +94,7 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 280

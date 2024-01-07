@@ -23,6 +23,7 @@ type
     procedure btn1Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
     procedure chk1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,6 +72,28 @@ begin
 if chk1.Checked then
 edt2.PasswordChar := '*' else
 edt2.PasswordChar := #0;
+end;
+
+procedure TForm1.btn2Click(Sender: TObject);
+begin
+if edt1.Text = '' then
+begin
+  ShowMessage('Username Tidak Boleh Kosong!');
+end else
+if edt2.Text = '' then
+begin
+  ShowMessage('Password Tidak Boleh Kosong!');
+end else
+begin
+  zqry1.SQL.Clear; //simpan
+  zqry1.SQL.Add('insert into login values(null,"'+edt1.Text+'","'+edt2.Text+'")');
+  zqry1.ExecSQL ;
+
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('select*from login');
+  zqry1.Open;
+  ShowMessage('DAFTAR BARHASIL!');
+end;
 end;
 
 end.
